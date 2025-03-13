@@ -15,6 +15,7 @@ By modeling outage severity in terms of affected customers, we aim to identify t
 
 ### Data Overview 
 The original data contains 1534 rows, each corresponding to an outage, and 57 column features. However, I am only considering a portion of them for my analysis
+
 | Column                     | Description |
 |----------------------------|-------------|
 | `'YEAR'`                   | Year an outage occurred |
