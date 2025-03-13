@@ -1,5 +1,5 @@
-#    
-
+# Power Outage Analysis
+## By Andrew Chen
 
 # Introduction
 
