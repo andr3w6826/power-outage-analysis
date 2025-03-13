@@ -1,1 +1,1 @@
-# power-outage-analysis
+# Power Outage Analysis
