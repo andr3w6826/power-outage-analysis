@@ -1,5 +1,5 @@
 # Power Outage Analysis
-By Andrew Chen
+A Data Science Project
 
 # Introduction
 
@@ -14,7 +14,7 @@ Thus, thisis project is centered around the following question:
 By modeling outage severity in terms of affected customers, we aim to identify the key factors that contribute to large-scale outages and develop a predictive framework that could assist with risk assessment and mitigation strategies.
 
 #### Data Overview 
-The original data contains 1534 rows, each corresponding to an outage, and 57 column features. However, I am only considering a portion of them for my analysis
+The original data contains 1534 rows, each corresponding to an outage, and 57 column features. However, I am only considering a portion of them for my analysis.
 
 
 | Column                     | Description |
@@ -42,6 +42,15 @@ The original data contains 1534 rows, each corresponding to an outage, and 57 co
 
 
 # Data Cleaning and Exploratory Data Analysis
+
+Cleaning the dataset was essential to ensure the accuracy and reliability of the analysis. Below is a step-by-step explanation of the cleaning process and how each step relates to the data-generating process and overall analysis.
+
+#### Data Cleaning
+
+1. The dataset contained 57 columns, but many were not needed for the analysis. I only kept the features I was interested in which include: `YEAR`, `MONTH`, `U.S._STATE`, `NERC.REGION`, `CLIMATE.REGION`, `ANOMALY.LEVEL`, `OUTAGE.START.DATE`, `OUTAGE.START.TIME`, `OUTAGE.RESTORATION.DATE`, `OUTAGE.RESTORATION.TIME`, `CAUSE.CATEGORY`, `OUTAGE.DURATION`, `DEMAND.LOSS.MW`, `CUSTOMERS.AFFECTED`, `TOTAL.PRICE`, `TOTAL.SALES`, `TOTAL.CUSTOMERS`, `POPPCT_URBAN`, `POPDEN_URBAN`, `AREAPCT_URBAN`.
+
+2. 
+
 # Assessment of Missingness
 # Hypothesis Testing
 # Framing a Prediction Problem
