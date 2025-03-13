@@ -3,18 +3,15 @@
 
 # Introduction
 
-Power outages can have significant social and economic consequences, affecting millions of people across the United States. Understanding the patterns and causes of outages is crucial for policymakers, utility companies, and communities aiming to improve power grid reliability.
+Power outages can have widespread impacts, disrupting daily life, businesses, and emergency services. The ability to predict the number of customers affected during an outage is crucial for infrastructure planning, disaster preparedness, and improving grid resilience. By understanding the key factors that contribute to large-scale outages, utility companies and policymakers can better allocate resources, improve response times, and minimize disruptions.
 
-In this project, I analyze a dataset of major power outages across different states in the continental U.S. from January 2000 to July 2016. This dataset contains information not only on major outages but also on geographical locations, regional climatic conditions, land-use characteristics, electricity consumption patterns, and economic factors of the states affected.
+In this project, I analyze a dataset of major power outages across different states in the continental U.S. from January 2000 to July 2016. This dataset not only includes information on major outages but also geographical locations, regional climatic conditions, land-use characteristics, electricity consumption patterns, and economic factors of the states affected.
 
+Central Research Question
+This project is centered around the following question:
 
-This project is centered around the following question: What factors contribute most to prolonged power outages in the U.S., and how do outage durations vary based on different causes?
-
-By exploring outage durations and their causes, we aim to uncover trends that could help mitigate future power failures. This question is particularly important because longer outages can disrupt daily life, hinder emergency responses, and cause economic losses. Understanding these factors can aid in infrastructure planning, disaster preparedness, and improving grid resilience.
-
-Dataset Overview
-Total Rows: 1,534 (representing 1,534 outages)
-Total Columns: 57 (although I will focus on a subset of these)
+How can we predict the number of customers affected by a power outage based on available outage characteristics?
+By modeling outage severity in terms of affected customers, we aim to identify the key factors that contribute to large-scale outages and develop a predictive framework that could assist with risk assessment and mitigation strategies.
  
 
 # Data Cleaning and Exploratory Data Analysis
