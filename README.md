@@ -13,8 +13,9 @@ Thus, thisis project is centered around the following question:
 
 By modeling outage severity in terms of affected customers, we aim to identify the key factors that contribute to large-scale outages and develop a predictive framework that could assist with risk assessment and mitigation strategies.
 
-### Data Overview 
+#### Data Overview 
 The original data contains 1534 rows, each corresponding to an outage, and 57 column features. However, I am only considering a portion of them for my analysis
+
 
 | Column                     | Description |
 |----------------------------|-------------|
@@ -24,6 +25,7 @@ The original data contains 1534 rows, each corresponding to an outage, and 57 co
 | `'NERC.REGION'`            | North American Electric Reliability Corporation (NERC) regions involved in the outage event |
 | `'CLIMATE.REGION'`         | U.S. Climate regions as specified by National Centers for Environmental Information (9 Regions) |
 | `'ANOMALY.LEVEL'`          | Oceanic El Niño/La Niña (ONI) index referring to the cold and warm episodes by season |
+| `'CLIMATE.CATEGORY'`       | Represents the climate episodes corresponding to the years. The categories—"Warm", "Cold" or "Normal"—are based on a threshold of ±0.5°C for the Oceanic Niño Index (ONI) |
 | `'OUTAGE.START.DATE'`      | Day of the year when the outage event started |
 | `'OUTAGE.START.TIME'`      | Time of the day when the outage event started |
 | `'OUTAGE.RESTORATION.DATE'` | Day of the year when power was restored to all the customers |
@@ -34,6 +36,9 @@ The original data contains 1534 rows, each corresponding to an outage, and 57 co
 | `'CUSTOMERS.AFFECTED'`     | Number of customers affected by the power outage event |
 | `'TOTAL.PRICE'`            | Average monthly electricity price in the U.S. state (cents/kilowatt-hour) |
 | `'TOTAL.SALES'`            | Total electricity consumption in the U.S. state (megawatt-hour) |
+| `'PC.REALGSP.STATE'`       | Per capita real gross state product (GSP) in the U.S. state (measured in 2009 chained U.S. dollars) |
+| `'POPDEN_URBAN'`           | Population density of the urban areas (persons per square mile) |
+| `'AREAPCT_URBAN'`          | Percentage of the land area of the U.S. state represented by the land area of the urban areas (in %) |
 
 
 # Data Cleaning and Exploratory Data Analysis
