@@ -70,8 +70,45 @@ The first few rows of the cleaned DataFrame are shown below, with a selection of
 
 ### Exploratory Data Analysis
 
+Exploratory Data Analysis provides insignts into the dataset's structure, distributions, and relationships between variables. 
+
+#### Univariate Analysis
+
+**Number of Outages Over Time**:
+
+Key Observations:
+    - The number of outages generaly increased from 2000 - 2011 and spiked in 2011, reaching over 250 recorded outages
+    - After 2011, there was a sharp decline, sugessting possible improvements to infastructure, policy changes, etc.
+
 <iframe
   src="assets/univariate-1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+**Causes of 2011's Outages**
+
+Key Observations:
+    - The large majority of causes were intentional attacks, hinting perhaps at increased civil unrest, crime, etc. 
+    - Given these findings, utility companies might need to allocate more resources to combat physical/cyber attacks.
+
+<iframe
+  src="assets/univariate-1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+**Causes of 2000-2016 Outages**
+
+Key Observations:
+    - More than half of all outages were caused by severe weather, suggesting, that storm mitigation and climate durability should be a top priority for utility companies 
+    - While intentional attacks are less frequent than weather events, it is still the second largest category and should be taken seriously
+    - Notably, equipment failure is surprisingly low, suggesting that the grid itself is usually well maintained.
+    
+<iframe
+  src="assets/univariate-3.html"
   width="800"
   height="600"
   frameborder="0"
