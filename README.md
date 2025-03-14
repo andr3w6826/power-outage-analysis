@@ -291,6 +291,24 @@ Since we reject the null hypothesis, it indicates that demand loss is more likel
 
 # Hypothesis Testing
 
+Power outages disrupt lives and infrastructure, but different causes may require different mitigation strategies. If severe weather leads to longer outages, investments in storm-proof infrastructure, grid resilience, and disaster recovery should be prioritized. Conversely, if intentional attacks cause comparable disruptions, cybersecurity and physical grid protection may require greater attention.
+
+**Null Hypothesis**: The mean outage durations for severe weather and intentional attacks are the same.
+
+**Alternative Hypothesis**: The mean outage duration for severe weather is greater than that of intentional attacks.
+
+**Test Statistic**: Compute the difference in means between the outage durations of severe weather and intentional attacks.
+
+<iframe
+  src="assets/hypothesis1.html"
+  width="800"
+  height="400"
+  frameborder="0"
+></iframe>
+
+
+
+
 
 
 # Framing a Prediction Problem
