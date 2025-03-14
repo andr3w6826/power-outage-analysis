@@ -309,8 +309,6 @@ Power outages disrupt lives and infrastructure, but different causes may require
   frameborder="0"
 ></iframe>
 
-<br>
-
 Since the p-value is effectively 0, we reject the null hypothesis in favor of the alternative. This suggests that severe weather outages tend to last significantly longer than those caused by intentional attakcs
 
 
