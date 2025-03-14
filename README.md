@@ -174,6 +174,7 @@ Key Observations:
     - This suggests that states like CA and TX might focus on reducing outage frequency, while the other states might prioritize improving recovery speed.
 
 <br>
+
 | U.S._STATE   |  Count |   Average OUTAGE.DURATION |
 |:-------------|-------------------------------:|------------------------------:|
 | California   |                            197 |                       1674.8  |
@@ -193,6 +194,7 @@ Key Observations:
     - The South experiences the highest number of customers affected per outage but has a shorter outage duration implying that utilities in the South might have faster response times despite more large scale disruptions. 
 
 <br>
+
 | CLIMATE.REGION     |   Average CUSTOMERS.AFFECTED |  Average DEMAND.LOSS.MW |  Average OUTAGE.DURATION |
 |:-------------------|---------------------:|-----------------:|------------------:|
 | East North Central |               149816 |          633.902 |           4626.5  |
