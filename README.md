@@ -222,12 +222,24 @@ To confirm whether the missingness is actually NMAR or instead Missing at Random
 
 ### Missingness Dependency: 
 
-#### **Is DEMAND.LOSS.MW NMAR?** 
+#### **Is `DEMAND.LOSS.MW` NMAR?** 
 
-The column is missing 857 times out of approximately 1457 observations, meaning that nearly 58% of the data in this column is missing. To determine if the missingness is Not Missing At Random (NMAR), I will test this column against the columns `CUSTOMERS.AFFECTED` and `TOTAL.SALES`
+The column is missing 857 times out of approximately 1457 observations, meaning that nearly 58% of the data in this column is missing. To determine if the missingness is NMAR or MAR, I will test this column against the columns `CUSTOMERS.AFFECTED` and `OUTAGE.DURATION`
 
+##### `DEMAND.LOSS.MW` vs `CUSTOMERS.AFFECTED`
 
+First, I examine the distribution of customers affected when demand loss is missing and not missing.
 
+Null Hypothesis: The distribution of customers affected is the same when demand loss is missing versus not missing.
+
+Alternate Hypothesis:  The distribution of customers affected is not the same when demand loss is missing versus not missing.
+
+<iframe
+  src="assets/missing1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 # Hypothesis Testing
 # Framing a Prediction Problem
