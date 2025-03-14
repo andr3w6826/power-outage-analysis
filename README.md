@@ -182,6 +182,7 @@ Key Observations:
 | Michigan     |                             95 |                       5302.98 |
 | Washington   |                             73 |                       1838.7  |
 | New York     |                             66 |                       6400.71 |
+
 <br>
 
 - **Outages by Climate Region**
@@ -202,6 +203,7 @@ Key Observations:
 | Central            |               145721 |          586.896 |           2882.21 |
 | South              |               212031 |          475.686 |           2872.45 |
 | Southeast          |               201340 |          865.318 |           2247.66 |
+
 <br>
 
 
@@ -288,6 +290,9 @@ The observed difference in means was 807.36 , and the computed p-value was 0.008
 Since we reject the null hypothesis, it indicates that demand loss is more likely to be missing when outages have a significantly different duration (either shorter or longer). This suggests that the missingness of DEMAND.LOSS.MW is not completely random (NMAR) and is instead dependent on outage duration (MAR)
 
 # Hypothesis Testing
+
+
+
 # Framing a Prediction Problem
 # Baseline Model
 # Final Model
