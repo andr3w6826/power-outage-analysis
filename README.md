@@ -1,4 +1,4 @@
-### Power Outage Severity: Predicting and Understanding Grid Disruptions
+### Power Outage Severity - Predicting and Understanding Grid Disruptions
 A Data Science Project
 
 # Introduction
@@ -8,10 +8,10 @@ Power outages can have widespread impacts, disrupting daily life, businesses, an
 In this project, I analyze a dataset of major power outages across different states in the continental U.S. from January 2000 to July 2016. This dataset not only includes information on major outages but also geographical locations, regional climatic conditions, land-use characteristics, electricity consumption patterns, and economic factors of the states affected.
 
 
-Thus, thisis project is centered around the following question:
+Thus, this project is centered around the following question:
 **"What factors influence the severity and duration of power outages, and how can we predict severe outages to improve response efforts?"**
 
-By modeling outage severity in terms of affected customers, we aim to identify the key factors that contribute to large-scale outages and develop a predictive framework that could assist with risk assessment and mitigation strategies.
+By modeling outage severity in terms of affected customers, I aim to identify key contributing factors. Then develop a predictive framework that could assist with risk assessment and mitigation strategies.
 
 ### Data Overview 
 The original data contains 1534 rows, each corresponding to an outage, and 57 column features. However, I am only considering a portion of them for my analysis.
