@@ -334,7 +334,20 @@ The features were then passed through a pipline where I one-hot-encoded `U.S._ST
 | **F1-Score**   | 0.41                | 0.90             | -       |
 | **Accuracy**   | -                   | -                | 0.82    |
 
+These performance metrics indicate that while the baseline model performs well in identifying severe outages (Class 1) with a high recall (0.89) and F1-score (0.90), it struggles to correctly classify non-severe outages (Class 0), as shown by its low precision (0.38) and F1-score (0.41). The accuracy of 82% suggests overall strong performance, but due to class imbalance, accuracy alone is not a sufficient indicator of model quality. The model's tendency to prioritize severe outages (high recall for Class 1) may be useful for emergency response planning, but the high false positive rate for severe outages could lead to an over-allocation of resources.
 
+While the model is not bad, it could use significant improvement in distinguishing between severe and non-severe outages to ensure resources are allocated efficiently.
 
 # Final Model
+
+Building upon the baseline model, I introduced new features and optimized hyperparameters to enhance the model’s ability to predict whether an outage will be severe. This section outlines the feature engineering process, the modeling algorithm, and the performance improvements over the baseline.
+
+### Feature Engineering
+
+To improve the model's predictive power, I introduced four new features derived from the outage start time and event characteristics. These features were chosen because they capture time-based trends and operational patterns that may influence outage severity. I believe that the time of day impacts outage severity because outages that occur during overnight hours may experience delayed response times due to reduced availability of repair crews, while outages during peak hours might be resolved more quickly due to higher staffing levels. Additionally, seasonal variations and weekends may impact outage durations due to weather conditions, workforce availability, and infrastructure demand.
+
+- `START_HOUR`: Extracts the hour of the day when the outage began (0-23).
+- `SEASON`: Categorizes the month into Winter, Spring, Summer, or Fall.
+- `IS_WEEKEND`: Binary feature (1 if the outage occurred on a weekend, 0 otherwise).
+- `IS_SEVERE`: The response variable, indicating whether an outage lasted more than 12 hours.
 # Fairness Analysis
