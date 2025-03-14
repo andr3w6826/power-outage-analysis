@@ -114,6 +114,14 @@ Key Observations:
   frameborder="0"
 ></iframe>
 
+<iframe
+  src="assets/us_outage_distribution.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
 # Assessment of Missingness
 # Hypothesis Testing
 # Framing a Prediction Problem
