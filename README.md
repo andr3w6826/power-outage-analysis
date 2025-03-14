@@ -248,7 +248,7 @@ I found the observed difference in means to be 15735.22 which has a p-value of 0
 <iframe
   src="assets/missing2.html"
   width="800"
-  height="600"
+  height="450"
   frameborder="0"
 ></iframe>
 
@@ -263,7 +263,7 @@ Alternate Hypothesis:  The distribution of outage duration is not the same when 
 <iframe
   src="assets/missing3.html"
   width="800"
-  height="600"
+  height="500"
   frameborder="0"
 ></iframe>
 
@@ -272,7 +272,7 @@ The observed difference in means was 807.36 , and the computed p-value was 0.008
 <iframe
   src="assets/missing4.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
