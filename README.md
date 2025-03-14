@@ -1,4 +1,4 @@
-### Power Outage Analysis
+### Power Outage Severity: Predicting and Understanding Grid Disruptions
 A Data Science Project
 
 # Introduction
