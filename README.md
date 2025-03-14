@@ -9,7 +9,7 @@ In this project, I analyze a dataset of major power outages across different sta
 
 
 Thus, thisis project is centered around the following question:
-**How can we predict the number of customers affected by a power outage based on available outage characteristics?**
+**"What factors influence the severity and duration of power outages, and how can we predict severe outages to improve response efforts?"**
 
 By modeling outage severity in terms of affected customers, we aim to identify the key factors that contribute to large-scale outages and develop a predictive framework that could assist with risk assessment and mitigation strategies.
 
@@ -289,6 +289,8 @@ The observed difference in means was 807.36 , and the computed p-value was 0.008
 #### **So, is `DEMAND.LOSS.MW` NMAR?** 
 Since we reject the null hypothesis, it indicates that demand loss is more likely to be missing when outages have a significantly different duration (either shorter or longer). This suggests that the missingness of DEMAND.LOSS.MW is not completely random (NMAR) and is instead dependent on outage duration (MAR)
 
+This makes sense in a real-world context: shorter outages might not have demand loss reported because the impact was minimal or not recorded in time, while extreme outages might also be missing data due to infrastructure failures or reporting inconsistencies.
+
 # Hypothesis Testing
 
 Power outages disrupt lives and infrastructure, but different causes may require different mitigation strategies. If severe weather leads to longer outages, investments in storm-proof infrastructure, grid resilience, and disaster recovery should be prioritized. Conversely, if intentional attacks cause comparable disruptions, cybersecurity and physical grid protection may require greater attention.
@@ -341,18 +343,6 @@ While the model is not bad, it could use significant improvement in distinguishi
 # Final Model
 
 Building upon the baseline model, I introduced new features and optimized hyperparameters to enhance the model’s ability to predict whether an outage will be severe. This section outlines the feature engineering process, the modeling algorithm, and the performance improvements over the baseline.
-
-YEAR (Quantitative): Captures long-term trends in outage severity due to infrastructure changes and climate patterns.
-MONTH (Ordinal): Accounts for seasonal weather variations (e.g., hurricanes in summer, snowstorms in winter).
-U.S._STATE (Nominal): Reflects state-level differences in infrastructure, regulations, and response times.
-NERC.REGION (Nominal): Represents regional grid reliability and preparedness variations.
-CLIMATE.REGION (Nominal): Identifies areas more prone to extreme weather events that affect outage severity.
-CLIMATE.CATEGORY (Nominal): Categorizes climate conditions (Warm, Cold, Normal) to assess grid performance impacts.
-CAUSE.CATEGORY (Nominal): Helps differentiate outages by cause (weather, equipment failure, or attacks).
-CUSTOMERS.AFFECTED (Quantitative): Measures outage scale, influencing severity and emergency response needs.
-START_HOUR (Quantitative): Captures time-of-day effects on response times (e.g., night outages may take longer to restore).
-SEASON (Nominal): Groups months into Winter, Spring, Summer, or Fall for broader seasonal trends.
-ANOMALY.LEVEL (Quantitative): Detects unusual weather deviations that may contribute to prolonged outages.
 
 ### Feature Engineering
 
@@ -416,12 +406,14 @@ By reducing false positives and improving ranking ability, this final model enha
 To assess the fairness of my final model, I analyzed whether it performs equally well for outages caused by severe weather compared to intentional attacks. Since these two causes represent different types of disruptions—one driven by natural events and the other by human actions—disparities in model performance could indicate bias in how the model predicts different outage scenarios.
 
 Groups Defined:
-Group X: Outages caused by severe weather
-Group Y: Outages caused by intentional attacks
-Evaluation Metric:
-I chose precision as my evaluation metric because it measures how often the model’s severe outage predictions are correct. If precision is lower for one group, it means the model is more likely to incorrectly classify outages in that group as severe, leading to misallocation of emergency response resources.
+- Group X: Outages caused by severe weather
+
+- Group Y: Outages caused by intentional attacks
+s
+- Evaluation Metric: I chose precision as my evaluation metric because it measures how often the model’s severe outage predictions are correct. If precision is lower for one group, it means the model is more likely to incorrectly classify outages in that group as severe, leading to misallocation of emergency response resources.
 
 **Null Hypothesis**: The model’s precision is the same for severe weather outages and intentional attacks. Any observed difference is due to random chance.
+
 **Alternative Hypothesis**: The model’s precision is lower for intentional attacks than for severe weather, meaning it struggles to correctly classify these outages.
 
 ### Results
