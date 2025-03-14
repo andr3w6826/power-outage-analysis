@@ -74,9 +74,9 @@ Exploratory Data Analysis provides insignts into the dataset's structure, distri
 
 ### Univariate Analysis
 
-**Number of Outages Over Time**:
+- **Number of Outages Over Time**:
 
-Key Observations:
+    Key Observations:
     - The number of outages generaly increased from 2000 - 2011 and spiked in 2011, reaching over 250 recorded outages
     - After 2011, there was a sharp decline, sugessting possible improvements to infastructure, policy changes, etc.
 
@@ -87,22 +87,23 @@ Key Observations:
   frameborder="0"
 ></iframe>
 
-**Causes of 2011's Outages**
+- **Causes of 2011's Outages**
 
 Key Observations:
+
     - The large majority of causes were intentional attacks, hinting perhaps at increased civil unrest, crime, etc. 
     - Given these findings, utility companies might need to allocate more resources to combat physical/cyber attacks.
 
 <iframe
-  src="assets/univariate-1.html"
+  src="assets/univariate-2.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
 
-**Causes of 2000-2016 Outages**
+- **Causes of 2000-2016 Outages**
 
-Key Observations:
+    Key Observations:
     - More than half of all outages were caused by severe weather, suggesting, that storm mitigation and climate durability should be a top priority for utility companies 
     - While intentional attacks are less frequent than weather events, it is still the second largest category and should be taken seriously
     - Notably, equipment failure is surprisingly low, suggesting that the grid itself is usually well maintained.
@@ -114,12 +115,12 @@ Key Observations:
   frameborder="0"
 ></iframe>
 
-**Geospatial Distribution of Power Outages**
+- **Geospatial Distribution of Power Outages**
 
-Key Observations:
+    Key Observations:
     - California and Texas experienced the highest number of recorded outages which could be due to population density, extremely dry weather, etc. 
     - The East Coast and parts of the Midwest show moderate outage frequencies which may be attributed to seasonal storms, hurricanes, etc. 
-    
+
 <iframe
   src="assets/us_outage_distribution.html"
   width="800"
