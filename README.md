@@ -45,7 +45,7 @@ The original data contains 1534 rows, each corresponding to an outage, and 57 co
 
 Cleaning the dataset was essential to ensure the accuracy and reliability of the analysis. Below is a step-by-step explanation of the cleaning process and how each step relates to the data-generating process and overall analysis.
 
-#### Data Cleaning
+### Data Cleaning
 
 **Selecting Relevant Columns**: The dataset contained 57 columns, but many were not needed for the analysis. Only variables relevant to the study were retained such as outage duration, causes, climation conditions, economic indicators, and population density metrics. These columns were corrected to appropriate data types.
 
@@ -57,17 +57,18 @@ These zero values were replaced with missing values to better reflect the underl
 
 **Combining Timestamps**: Since the dataset originally stored date and time as separate columns for both start and restoration times, I merged the two columns to create new timestamp colummns `OUTAGE.START` and `OUTAGE.RESTORATION`. This transformation provides a way to double check `OUTAGE.DURATION`
 
-The first few rows of the cleaned DataFrame are shown below
+The first few rows of the cleaned DataFrame are shown below, with a selection of columns chosen
 
-|   YEAR |   MONTH | U.S._STATE   | NERC.REGION   | CLIMATE.REGION     |   ANOMALY.LEVEL | CLIMATE.CATEGORY   | CAUSE.CATEGORY     |   OUTAGE.DURATION |   DEMAND.LOSS.MW |   CUSTOMERS.AFFECTED |   TOTAL.PRICE |   TOTAL.SALES |   PC.REALGSP.STATE |   POPDEN_URBAN |   AREAPCT_URBAN | OUTAGE.START        | OUTAGE.RESTORATION   |
-|-------:|--------:|:-------------|:--------------|:-------------------|----------------:|:-------------------|:-------------------|------------------:|-----------------:|---------------------:|--------------:|--------------:|-------------------:|---------------:|----------------:|:--------------------|:---------------------|
-|   2011 |       7 | Minnesota    | MRO           | East North Central |            -0.3 | normal             | severe weather     |              3060 |              nan |                70000 |          9.28 |   6.56252e+06 |              51268 |           2279 |            2.14 | 2011-07-01 17:00:00 | 2011-07-03 20:00:00  |
-|   2014 |       5 | Minnesota    | MRO           | East North Central |            -0.1 | normal             | intentional attack |                 1 |              nan |                  nan |          9.28 |   5.28423e+06 |              53499 |           2279 |            2.14 | 2014-05-11 18:38:00 | 2014-05-11 18:39:00  |
-|   2010 |      10 | Minnesota    | MRO           | East North Central |            -1.5 | cold               | severe weather     |              3000 |              nan |                70000 |          8.15 |   5.22212e+06 |              50447 |           2279 |            2.14 | 2010-10-26 20:00:00 | 2010-10-28 22:00:00  |
-|   2012 |       6 | Minnesota    | MRO           | East North Central |            -0.1 | normal             | severe weather     |              2550 |              nan |                68200 |          9.19 |   5.78706e+06 |              51598 |           2279 |            2.14 | 2012-06-19 04:30:00 | 2012-06-20 23:00:00  |
-|   2015 |       7 | Minnesota    | MRO           | East North Central |             1.2 | warm               | severe weather     |              1740 |              250 |               250000 |         10.43 |   5.97034e+06 |              54431 |           2279 |            2.14 | 2015-07-18 02:00:00 | 2015-07-19 07:00:00  |
+|   YEAR |   MONTH | U.S._STATE   | CLIMATE.REGION     | CAUSE.CATEGORY     | OUTAGE.START        |   OUTAGE.DURATION |   DEMAND.LOSS.MW |   CUSTOMERS.AFFECTED |
+|-------:|--------:|:-------------|:-------------------|:-------------------|:--------------------|------------------:|-----------------:|---------------------:|
+|   2015 |       7 | Minnesota    | East North Central | severe weather     | 2015-07-18 02:00:00 |              1740 |              250 |               250000 |
+|   2010 |      11 | Minnesota    | East North Central | severe weather     | 2010-11-13 15:00:00 |              1860 |              nan |                60000 |
+|   2010 |       7 | Minnesota    | East North Central | severe weather     | 2010-07-17 20:30:00 |              2970 |              nan |                63000 |
+|   2005 |       6 | Minnesota    | East North Central | severe weather     | 2005-06-08 04:00:00 |              3960 |               75 |               300000 |
+|   2015 |       3 | Minnesota    | East North Central | intentional attack | 2015-03-16 07:31:00 |               155 |               20 |                 5941 |
+|   2013 |       6 | Minnesota    | East North Central | severe weather     | 2013-06-21 17:39:00 |              3621 |              nan |               400000 |
 
-#### Exploratory Data Analysis
+### Exploratory Data Analysis
 
 <iframe
   src="assets/univariate-1.html"
