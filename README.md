@@ -157,7 +157,38 @@ Key Observations:
   frameborder="0"
 ></iframe>
 
+### Grouping and Aggregates
+
+- **Outages by U.S. State**
+    Key Observations:
+    - Sorted by counts, California and Texas have the highest incidents while Michigan, Washington, and New York have few outages. However, CA and TX have lower average durations compared to MI, WA, NY.
+    - This suggests that states like CA and TX might focus on reducing outage frequency, while the other states might prioritize improving recovery speed.
+
+| U.S._STATE   |  Count |   Average OUTAGE.DURATION |
+|:-------------|-------------------------------:|------------------------------:|
+| California   |                            197 |                       1674.8  |
+| Texas        |                            121 |                       2727.17 |
+| Michigan     |                             95 |                       5302.98 |
+| Washington   |                             73 |                       1838.7  |
+| New York     |                             66 |                       6400.71 |
+
+- **Outages by Climate Region**
+    Key Observations:
+    - 
+
+| CLIMATE.REGION     |   Average CUSTOMERS.AFFECTED |  Average DEMAND.LOSS.MW |  Average OUTAGE.DURATION |
+|:-------------------|---------------------:|-----------------:|------------------:|
+| East North Central |               149816 |          633.902 |           4626.5  |
+| Northeast          |               175915 |          991.154 |           3330.52 |
+| Central            |               145721 |          586.896 |           2882.21 |
+| South              |               212031 |          475.686 |           2872.45 |
+| Southeast          |               201340 |          865.318 |           2247.66 |
+
+
 # Assessment of Missingness
+
+
+
 # Hypothesis Testing
 # Framing a Prediction Problem
 # Baseline Model
