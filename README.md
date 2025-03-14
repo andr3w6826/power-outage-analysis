@@ -293,7 +293,7 @@ This makes sense in a real-world context: shorter outages might not have demand 
 
 # Hypothesis Testing
 
-Power outages disrupt lives and infrastructure, but different causes may require different mitigation strategies. If severe weather leads to longer outages, investments in storm-proof infrastructure, grid resilience, and disaster recovery should be prioritized. Conversely, if intentional attacks cause comparable disruptions, cybersecurity and physical grid protection may require greater attention.
+Power outages disrupt daily life and infrastructure, but the effectiveness of mitigation strategies may depend on the cause of the outage. If severe weather leads to longer outages, investments in storm-proof infrastructure, grid resilience, and disaster recovery should be prioritized. Conversely, if intentional attacks cause comparable disruptions, cybersecurity and physical grid protection may require greater attention.
 
 **Null Hypothesis**: The mean outage durations for severe weather and intentional attacks are the same.
 
@@ -315,7 +315,7 @@ Since the p-value is effectively 0, we reject the null hypothesis in favor of th
 
 # Framing a Prediction Problem
 
-For this project, I am formulating a binary classification problem to predict whether a power outage is severe (lasting more than 2 days) or non-severe (lasting 2 days or less). Thus, my respose variable will be IS_SEVERE (1 if the outage lasts more than 2 days, 0 otherwise). This is an important problem because accurately predicting whether an outage will be severe allows utility companies to proactively allocate resources, mobilize emergency response teams, and minimize downtime for critical infrastructure. By identifying severe outages early, companies can prioritize high-risk regions, deploy repair crews more efficiently, and mitigate economic and public safety risks associated with prolonged power disruptions. 
+For this project, I am formulating a binary classification problem to predict whether a power outage is severe (lasting more than 2 days) or non-severe (lasting 2 days or less). Thus, my response variable will be IS_SEVERE (1 if the outage lasts more than 2 days, 0 otherwise). This is an important problem because accurately predicting whether an outage will be severe allows utility companies to proactively allocate resources, mobilize emergency response teams, and minimize downtime for critical infrastructure. By identifying severe outages early, companies can prioritize high-risk regions, deploy repair crews more efficiently, and mitigate economic and public safety risks associated with prolonged power disruptions. 
 
 My model evaluation metric will be the F1-score as my dataset is imbalanced in severe and non-severe outages. The F1-score balances precision and recall, making it the best choice when false negatives and false positives are important concerns. 
 
@@ -325,7 +325,7 @@ At the time of an outage severity prediction, we would have access to the featur
 
 To establish a baseline model, I trained a Random Forest Classifier using only three features: Month (numerical), U.S. State (categorical), and Customers Affected (numerical). This serves as a simple benchmark to compare against more complex models later.
 
-The features were then passed through a pipline where I one-hot-encoded `U.S._STATE` and passed the numerical features through. To make up for a portion of missing values, I imputed missing values for `CUSTOMERS.AFFECTED` with it's median to avoid biasing the dataset toward any extreme values.
+The features were then passed through a pipeline where I one-hot-encoded `U.S._STATE` and passed the numerical features through. To make up for a portion of missing values, I imputed missing values for `CUSTOMERS.AFFECTED` with it's median to avoid biasing the dataset toward any extreme values.
 
 ### Baseline Model Performance
 
@@ -395,7 +395,7 @@ These hyperparameters allowed the model to learn complex patterns in the data wh
 | **F1 (Non-Severe)** | 0.41    | **0.61**    |
 | **F1 (Severe)** | 0.90       | **0.94**    |
 
-The final model shows signifanct improvement over the baseline model, making it more reliable for predicting outage severity and guiding emergency response. With a higher accurracy, the model is better at distinguishing between severe and non-severe outages. 
+The final model shows significant improvement over the baseline model, making it more reliable for predicting outage severity and guiding emergency response. With a higher accuracy, the model is better at distinguishing between severe and non-severe outages. 
 
 One of the most impactful improvements is in identifying non-severe outages, where the F1-score increased from 0.41 to 0.61. This means the model is far less likely to misclassify minor outages as severe, preventing unnecessary emergency responses and resource overuse. At the same time, the model maintains a strong ability to detect truly severe outages, with an F1-score of 0.94 compared to 0.90 in the baseline, ensuring that high-risk outages continue to receive urgent attention. 
 
@@ -403,7 +403,7 @@ By reducing false positives and improving ranking ability, this final model enha
 
 # Fairness Analysis
 
-To assess the fairness of my final model, I analyzed whether it performs equally well for outages caused by severe weather compared to intentional attacks. Since these two causes represent different types of disruptions—one driven by natural events and the other by human actions—disparities in model performance could indicate bias in how the model predicts different outage scenarios.
+To assess the fairness of my final model, I analyzed whether it performs equally well for outages caused by severe weather compared to those caused by intentional attacks. Since these two causes represent fundamentally different types of disruptions—one driven by natural disasters and the other by human actions—disparities in model performance could indicate bias in how outage severity is predicted.
 
 Groups Defined:
 - Group X: Outages caused by severe weather
