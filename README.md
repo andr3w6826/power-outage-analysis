@@ -342,6 +342,18 @@ While the model is not bad, it could use significant improvement in distinguishi
 
 Building upon the baseline model, I introduced new features and optimized hyperparameters to enhance the model’s ability to predict whether an outage will be severe. This section outlines the feature engineering process, the modeling algorithm, and the performance improvements over the baseline.
 
+YEAR (Quantitative): Captures long-term trends in outage severity due to infrastructure changes and climate patterns.
+MONTH (Ordinal): Accounts for seasonal weather variations (e.g., hurricanes in summer, snowstorms in winter).
+U.S._STATE (Nominal): Reflects state-level differences in infrastructure, regulations, and response times.
+NERC.REGION (Nominal): Represents regional grid reliability and preparedness variations.
+CLIMATE.REGION (Nominal): Identifies areas more prone to extreme weather events that affect outage severity.
+CLIMATE.CATEGORY (Nominal): Categorizes climate conditions (Warm, Cold, Normal) to assess grid performance impacts.
+CAUSE.CATEGORY (Nominal): Helps differentiate outages by cause (weather, equipment failure, or attacks).
+CUSTOMERS.AFFECTED (Quantitative): Measures outage scale, influencing severity and emergency response needs.
+START_HOUR (Quantitative): Captures time-of-day effects on response times (e.g., night outages may take longer to restore).
+SEASON (Nominal): Groups months into Winter, Spring, Summer, or Fall for broader seasonal trends.
+ANOMALY.LEVEL (Quantitative): Detects unusual weather deviations that may contribute to prolonged outages.
+
 ### Feature Engineering
 
 To improve the model's predictive power, I introduced four new features derived from the outage start time and event characteristics. These features were chosen because they capture time-based trends and operational patterns that may influence outage severity. I believe that the time of day impacts outage severity because outages that occur during overnight hours may experience delayed response times due to reduced availability of repair crews, while outages during peak hours might be resolved more quickly due to higher staffing levels. Additionally, seasonal variations and weekends may impact outage durations due to weather conditions, workforce availability, and infrastructure demand.
@@ -353,7 +365,19 @@ To improve the model's predictive power, I introduced four new features derived 
 
 ### Model Algorithm and Hyperparameters
 
-For my final model, I continued using the Random Forest Classifier, as it effectively handles both numerical and categorical data, is robust to outliers, and provides feature importance insights. Additionally, Random Forest naturally handles class imbalance through its ability to adjust class weights, making it a strong choice for this prediction task.
+For my final model, I continued using the Random Forest Classifier, as it effectively handles both numerical and categorical data, is robust to outliers, and provides feature importance insights. Additionally, Random Forest naturally handles class imbalance through its ability to adjust class weights, making it a strong choice for this prediction task. My model incorporated these features
+
+- `YEAR` (Quantitative): Captures long-term trends in outage severity due to infrastructure changes and climate patterns.
+- `MONTH` (Ordinal): Accounts for seasonal weather variations (e.g., hurricanes in summer, snowstorms in winter).
+- `U.S._STATE` (Nominal): Reflects state-level differences in infrastructure, regulations, and response times.
+- `NERC.REGION` (Nominal): Represents regional grid reliability and preparedness variations.
+- `CLIMATE.REGION` (Nominal): Identifies areas more prone to extreme weather events that affect outage severity.
+- `CLIMATE.CATEGORY` (Nominal): Categorizes climate conditions (Warm, Cold, Normal) to assess grid performance impacts.
+- `CAUSE.CATEGORY` (Nominal): Helps differentiate outages by cause (weather, equipment failure, or attacks).
+- `CUSTOMERS.AFFECTED` (Quantitative): Measures outage scale, influencing severity and emergency response needs.
+- `START_HOUR` (Quantitative): Captures time-of-day effects on response times (e.g., night outages may take longer to restore).
+- `SEASON` (Nominal): Groups months into Winter, Spring, Summer, or Fall for broader seasonal trends.
+- `ANOMALY.LEVEL` (Quantitative): Detects unusual weather deviations that may contribute to prolonged outages.
 
 To further improve model performance, I conducted hyperparameter tuning using GridSearchCV with 5-fold cross-validation, optimizing for F1-score to ensure a balance between precision and recall. The best hyperparameters found were:
 
@@ -381,5 +405,10 @@ These hyperparameters allowed the model to learn complex patterns in the data wh
 | **F1 (Non-Severe)** | 0.41    | **0.61**    |
 | **F1 (Severe)** | 0.90       | **0.94**    |
 
+The final model shows signifanct improvement over the baseline model, making it more reliable for predicting outage severity and guiding emergency response. With a higher accurracy, the model is better at distinguishing between severe and non-severe outages. 
+
+One of the most impactful improvements is in identifying non-severe outages, where the F1-score increased from 0.41 to 0.61. This means the model is far less likely to misclassify minor outages as severe, preventing unnecessary emergency responses and resource overuse. At the same time, the model maintains a strong ability to detect truly severe outages, with an F1-score of 0.94 compared to 0.90 in the baseline, ensuring that high-risk outages continue to receive urgent attention. 
+
+By reducing false positives and improving ranking ability, this final model enhances disaster preparedness, response efficiency, and overall grid resilience.
 
 # Fairness Analysis
