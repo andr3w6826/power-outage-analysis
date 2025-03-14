@@ -221,9 +221,9 @@ Exploratory Data Analysis provides insights into the dataset's structure, distri
 
 #### **Is `CUSTOMERS.AFFECTED` NMAR?**
 
-I believe that `CUSTOMERS.AFFECTED` is Not Missing At Random (NMAR) because the likelihood its missingness is related to the value itself rather than being randomly distributed or dependent on other observed variables. Various reasonings for missingness may be:
+I believe that `CUSTOMERS.AFFECTED` is Not Missing At Random (NMAR) because the likelihood of its missingness is related to the value itself rather than being randomly distributed or dependent on other observed variables. Various reasonings for missingness may be:
 
-- Severe outages: Large scale disasters may overwhelm reporting systems
+- Severe outages: Large-scale disasters may overwhelm reporting systems
 - Intentional non-disclosure: Utility companies might not report the impact of an outage for perhaps legal liabilities or bad press
 
 To confirm whether the missingness is actually NMAR or instead Missing at Random (MAR), I could collect additional data such as:
@@ -236,7 +236,7 @@ To confirm whether the missingness is actually NMAR or instead Missing at Random
 
 #### **Is `DEMAND.LOSS.MW` NMAR?** 
 
-The column is missing 857 times out of approximately 1457 observations, meaning that nearly 58% of the data in this column is missing. To determine if the missingness is NMAR or MAR, I will test this column against the columns `CUSTOMERS.AFFECTED` and `OUTAGE.DURATION`
+The column is missing 857 times out of approximately 1457 observations, meaning that nearly 58% of the data in this column is missing. To determine whether the missingness is NMAR or MAR, I will test this column against `CUSTOMERS.AFFECTED` and `OUTAGE.DURATION`
 
 ##### DEMAND.LOSS.MW vs CUSTOMERS.AFFECTED
 
@@ -253,7 +253,7 @@ Alternate Hypothesis:  The distribution of customers affected is not the same wh
   frameborder="0"
 ></iframe>
 
-I found the observed difference in means to be 15735.22 which has a p-value of 0.4704. Since this p-value is above the signifiance threshold of 0.05, I fail to reject the null hypothesis. This suggests that the missingness in `DEMAND.LOSS.MW` is not significantly dependent on `CUSTOMERS.AFFECTED`, and that the missingness could be NMAR. Below is the empirical distribution of the difference in means. 
+The observed difference in means was 15,735.22, with a p-value of 0.4704. Since this p-value is above the significance threshold of 0.05, I fail to reject the null hypothesis. This suggests that the missingness in `DEMAND.LOSS.MW` is not significantly dependent on `CUSTOMERS.AFFECTED`, and that the missingness could be NMAR. Below is the empirical distribution of the difference in means. 
 
 <iframe
   src="assets/missing2.html"
@@ -277,7 +277,7 @@ Alternate Hypothesis:  The distribution of outage duration is not the same when 
   frameborder="0"
 ></iframe>
 
-The observed difference in means was 807.36 , and the computed p-value was 0.008. Given this p-value, we reject the null hypothesis, indicating that there is a statistically significant relationship between the missingness of DEMAND.LOSS.MW and OUTAGE.DURATION. This suggests that outage duration may play a role in whether demand loss is recorded or not.
+The observed difference in means was 807.36, and the computed p-value was 0.008. Given this p-value, we reject the null hypothesis, indicating that there is a statistically significant relationship between the missingness of DEMAND.LOSS.MW and OUTAGE.DURATION. This suggests that outage duration may play a role in whether demand loss is recorded.
 
 <iframe
   src="assets/missing4.html"
@@ -287,7 +287,7 @@ The observed difference in means was 807.36 , and the computed p-value was 0.008
 ></iframe>
 
 #### **So, is `DEMAND.LOSS.MW` NMAR?** 
-Since we reject the null hypothesis, it indicates that demand loss is more likely to be missing when outages have a significantly different duration (either shorter or longer). This suggests that the missingness of DEMAND.LOSS.MW is not completely random (NMAR) and is instead dependent on outage duration (MAR)
+Since we rejected the null hypothesis, this indicates that demand loss is more likely to be missing in cases of extreme outage durations (either very short or very long).This suggests that the missingness of DEMAND.LOSS.MW is not completely random (NMAR) and is instead dependent on outage duration (MAR).
 
 This makes sense in a real-world context: shorter outages might not have demand loss reported because the impact was minimal or not recorded in time, while extreme outages might also be missing data due to infrastructure failures or reporting inconsistencies.
 
