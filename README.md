@@ -13,7 +13,7 @@ Thus, thisis project is centered around the following question:
 
 By modeling outage severity in terms of affected customers, we aim to identify the key factors that contribute to large-scale outages and develop a predictive framework that could assist with risk assessment and mitigation strategies.
 
-#### Data Overview 
+### Data Overview 
 The original data contains 1534 rows, each corresponding to an outage, and 57 column features. However, I am only considering a portion of them for my analysis.
 
 
@@ -45,7 +45,7 @@ The original data contains 1534 rows, each corresponding to an outage, and 57 co
 
 Cleaning the dataset was essential to ensure the accuracy and reliability of the analysis. Below is a step-by-step explanation of the cleaning process and how each step relates to the data-generating process and overall analysis.
 
-### Data Cleaning
+## Data Cleaning
 
 **Selecting Relevant Columns**: The dataset contained 57 columns, but many were not needed for the analysis. Only variables relevant to the study were retained such as outage duration, causes, climation conditions, economic indicators, and population density metrics. These columns were corrected to appropriate data types.
 
@@ -68,11 +68,11 @@ The first few rows of the cleaned DataFrame are shown below, with a selection of
 |   2015 |       3 | Minnesota    | East North Central | intentional attack | 2015-03-16 07:31:00 |               155 |               20 |                 5941 |
 |   2013 |       6 | Minnesota    | East North Central | severe weather     | 2013-06-21 17:39:00 |              3621 |              nan |               400000 |
 
-### Exploratory Data Analysis
+## Exploratory Data Analysis
 
 Exploratory Data Analysis provides insignts into the dataset's structure, distributions, and relationships between variables. 
 
-#### Univariate Analysis
+### Univariate Analysis
 
 **Number of Outages Over Time**:
 
@@ -106,7 +106,7 @@ Key Observations:
     - More than half of all outages were caused by severe weather, suggesting, that storm mitigation and climate durability should be a top priority for utility companies 
     - While intentional attacks are less frequent than weather events, it is still the second largest category and should be taken seriously
     - Notably, equipment failure is surprisingly low, suggesting that the grid itself is usually well maintained.
-    
+
 <iframe
   src="assets/univariate-3.html"
   width="800"
