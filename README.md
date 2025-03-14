@@ -350,4 +350,36 @@ To improve the model's predictive power, I introduced four new features derived 
 - `SEASON`: Categorizes the month into Winter, Spring, Summer, or Fall.
 - `IS_WEEKEND`: Binary feature (1 if the outage occurred on a weekend, 0 otherwise).
 - `IS_SEVERE`: The response variable, indicating whether an outage lasted more than 12 hours.
+
+### Model Algorithm and Hyperparameters
+
+For my final model, I continued using the Random Forest Classifier, as it effectively handles both numerical and categorical data, is robust to outliers, and provides feature importance insights. Additionally, Random Forest naturally handles class imbalance through its ability to adjust class weights, making it a strong choice for this prediction task.
+
+To further improve model performance, I conducted hyperparameter tuning using GridSearchCV with 5-fold cross-validation, optimizing for F1-score to ensure a balance between precision and recall. The best hyperparameters found were:
+
+- max_depth: 20
+- min_samples_leaf: 1
+- min_samples_split: 2
+- n_estimators: 200
+
+These hyperparameters allowed the model to learn complex patterns in the data while avoiding overfitting, leading to improved generalization.
+
+### Final Model Performance
+
+| Metric        | Class 0 (Non-Severe) | Class 1 (Severe) | Overall |
+|--------------|---------------------|------------------|---------|
+| **Precision**  | 0.63                | 0.93             | -       |
+| **Recall**     | 0.59                | 0.94             | -       |
+| **F1-Score**   | 0.61                | 0.94             | -       |
+| **Accuracy**   | -                   | -                | 0.89    |
+
+### Baseline vs. Final Model Comparison
+
+| Metric        | Baseline Model | Final Model |
+|--------------|---------------|-------------|
+| **Accuracy**  | 0.82          | **0.89**    |
+| **F1 (Non-Severe)** | 0.41    | **0.61**    |
+| **F1 (Severe)** | 0.90       | **0.94**    |
+
+
 # Fairness Analysis
