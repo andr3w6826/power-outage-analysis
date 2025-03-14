@@ -297,15 +297,19 @@ Power outages disrupt lives and infrastructure, but different causes may require
 
 **Alternative Hypothesis**: The mean outage duration for severe weather is greater than that of intentional attacks.
 
-**Test Statistic**: Compute the difference in means between the outage durations of severe weather and intentional attacks.
+**Test Statistic**: The difference in means between the outage durations of severe weather and intentional attacks is 3,377.78 (~56 hours)
+
+**P-Value**: 0.0, meaning the probability of observing this result under the null hypothesis is extremely low
+
 
 <iframe
   src="assets/hypothesis1.html"
   width="800"
-  height="400"
+  height="500"
   frameborder="0"
 ></iframe>
 
+Since the p-value is effectively 0, we reject the null hypothesis,
 
 
 
