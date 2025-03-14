@@ -96,7 +96,7 @@ Key Observations:
 <iframe
   src="assets/univariate-2.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
@@ -110,9 +110,10 @@ Key Observations:
 <iframe
   src="assets/univariate-3.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
+<br>
 
 - **Geospatial Distribution of Power Outages**
 
@@ -126,6 +127,7 @@ Key Observations:
   height="600"
   frameborder="0"
 ></iframe>
+<br>
 
 ### Bivariate Analysis
 
@@ -141,7 +143,7 @@ Key Observations:
   height="600"
   frameborder="0"
 ></iframe>
-
+<br>
 - **Demand Loss vs Outage Duration**
 
     *Note: Bubble size denotes number of customers affected*
@@ -157,17 +159,21 @@ Key Observations:
   height="600"
   frameborder="0"
 ></iframe>
+<br>
 
 ### Grouping and Aggregates
 
-    *Note: Only first 5 rows shown* 
+    
 
 - **Outages by U.S. State**
+
+    *Note: Only first 5 rows are shown*
 
     Key Observations:
     - Sorted by counts, California and Texas have the highest incidents while Michigan, Washington, and New York have few outages. However, CA and TX have lower average durations compared to MI, WA, NY.
     - This suggests that states like CA and TX might focus on reducing outage frequency, while the other states might prioritize improving recovery speed.
 
+<br>
 | U.S._STATE   |  Count |   Average OUTAGE.DURATION |
 |:-------------|-------------------------------:|------------------------------:|
 | California   |                            197 |                       1674.8  |
@@ -175,7 +181,7 @@ Key Observations:
 | Michigan     |                             95 |                       5302.98 |
 | Washington   |                             73 |                       1838.7  |
 | New York     |                             66 |                       6400.71 |
-
+<br>
 
 - **Outages by Climate Region**
 
@@ -186,7 +192,7 @@ Key Observations:
     - The northeast's demand loss is also on the higher side, possibly due to high population density and reliance on electricity
     - The South experiences the highest number of customers affected per outage but has a shorter outage duration implying that utilities in the South might have faster response times despite more large scale disruptions. 
 
-
+<br>
 | CLIMATE.REGION     |   Average CUSTOMERS.AFFECTED |  Average DEMAND.LOSS.MW |  Average OUTAGE.DURATION |
 |:-------------------|---------------------:|-----------------:|------------------:|
 | East North Central |               149816 |          633.902 |           4626.5  |
@@ -194,7 +200,7 @@ Key Observations:
 | Central            |               145721 |          586.896 |           2882.21 |
 | South              |               212031 |          475.686 |           2872.45 |
 | Southeast          |               201340 |          865.318 |           2247.66 |
-
+<br>
 
 
 # Assessment of Missingness
@@ -239,7 +245,7 @@ Alternate Hypothesis:  The distribution of customers affected is not the same wh
 <iframe
   src="assets/missing1.html"
   width="800"
-  height="400"
+  height="430"
   frameborder="0"
 ></iframe>
 
@@ -248,7 +254,7 @@ I found the observed difference in means to be 15735.22 which has a p-value of 0
 <iframe
   src="assets/missing2.html"
   width="800"
-  height="450"
+  height="420"
   frameborder="0"
 ></iframe>
 
@@ -263,7 +269,7 @@ Alternate Hypothesis:  The distribution of outage duration is not the same when 
 <iframe
   src="assets/missing3.html"
   width="800"
-  height="500"
+  height="440"
   frameborder="0"
 ></iframe>
 
