@@ -311,11 +311,14 @@ Power outages disrupt lives and infrastructure, but different causes may require
 
 Since the p-value is effectively 0, we reject the null hypothesis in favor of the alternative. This suggests that severe weather outages tend to last significantly longer than those caused by intentional attakcs
 
-
-
-
-
 # Framing a Prediction Problem
+
+For this project, I am formulating a binary classification problem to predict whether a power outage is severe (lasting more than 2 days) or non-severe (lasting 2 days or less). Thus, my respose variable will be IS_SEVERE (1 if the outage lasts more than 2 days, 0 otherwise). This is an important problem because accurately predicting whether an outage will be severe allows utility companies to proactively allocate resources, mobilize emergency response teams, and minimize downtime for critical infrastructure. By identifying severe outages early, companies can prioritize high-risk regions, deploy repair crews more efficiently, and mitigate economic and public safety risks associated with prolonged power disruptions. 
+
+My model evaluation metric will be the F1-score as my dataset is imbalanced in severe and non-severe outages. The F1-score balances precision and recall, making it the best choice when false negatives and false positives are important concerns. 
+
+At the time of an outage severity prediction, we would have access to the features: `YEAR`, `MONTH`, `U.S._STATE`, `NERC.REGION`, `CLIMATE.REGION`, `CLIMATE.CATEGORY`,  `CAUSE.CATEGORY`, `CUSTOMERS.AFFECTED`, `SEASON`, `START_HOUR`,  `ANOMALY.LEVEL`.
+
 # Baseline Model
 # Final Model
 # Fairness Analysis
