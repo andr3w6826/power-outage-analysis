@@ -241,6 +241,8 @@ Alternate Hypothesis:  The distribution of customers affected is not the same wh
   frameborder="0"
 ></iframe>
 
+I found the observed difference in means to be 15735.22 which has a p-value of 0.4704. Since this p-value is above the signifiance threshold of 0.05, I fail to reject the null hypothesis. This suggests that the missingness in `DEMAND.LOSS.MW` is not significantly dependent on `CUSTOMERS.AFFECTED`, and that the missingness could be NMAR. Below is the empirical distribution of the difference in means. 
+
 <iframe
   src="assets/missing2.html"
   width="800"
@@ -248,18 +250,33 @@ Alternate Hypothesis:  The distribution of customers affected is not the same wh
   frameborder="0"
 ></iframe>
 
+##### DEMAND.LOSS.MW vs OUTAGE.DURATION
+
+Here, I conduct a similar difference-in-means test, comparing outage duration between rows where demand loss is missing and not missing.
+
+Null Hypothesis: The distribution of outage duration is the same when demand loss is missing versus not missing.
+
+Alternate Hypothesis:  The distribution of outage duration is not the same when demand loss is missing versus not missing.
+
 <iframe
   src="assets/missing3.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+The observed difference in means was 807.36 , and the computed p-value was 0.008. Given this p-value, we reject the null hypothesis, indicating that there is a statistically significant relationship between the missingness of DEMAND.LOSS.MW and OUTAGE.DURATION. This suggests that outage duration may play a role in whether demand loss is recorded or not.
+
 <iframe
   src="assets/missing4.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+#### **So, is `DEMAND.LOSS.MW` NMAR?** 
+Since we reject the null hypothesis, it indicates that demand loss is more likely to be missing when outages have a significantly different duration (either shorter or longer). This suggests that the missingness of DEMAND.LOSS.MW is not completely random and is instead dependent on outage duration.
+
 # Hypothesis Testing
 # Framing a Prediction Problem
 # Baseline Model
