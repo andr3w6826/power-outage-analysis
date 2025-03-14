@@ -127,6 +127,35 @@ Key Observations:
   frameborder="0"
 ></iframe>
 
+### Bivariate Analysis
+
+- **Outage Duration vs. Cause Category**
+
+    Key Observations:
+    - Severe weather appears to be associated with some of the longest outages, with many instances lasting over 14,000 minutes (~10 days)
+    - Intentional attakcs and equipment failures generally lead to shorter outages, indicating a quick resolution time with the exception of an outlier
+
+<iframe
+  src="assets/bivariate-1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+- **Demand Loss vs Outage Duration**
+    *Note: Bubble size denotes number of customers affected*
+
+    Key Observations:
+    - The majority of outages are concentrated at shorter durations and lower demand losses, indicating that most power disruptions are short and affect a limited power supply
+    - There is a cluster of high demand loss in the first 5,000 minutes, likely representing outages in urban areas with high energy consumption
+    - 2008's Hurricane Ike stands out as an extreme event, representing the bubble lasting around 30,000 minutes (~21 days) and causing significant loss
+
+<iframe
+  src="assets/bivariate-2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 # Assessment of Missingness
 # Hypothesis Testing
