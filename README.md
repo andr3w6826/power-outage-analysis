@@ -412,3 +412,27 @@ One of the most impactful improvements is in identifying non-severe outages, whe
 By reducing false positives and improving ranking ability, this final model enhances disaster preparedness, response efficiency, and overall grid resilience.
 
 # Fairness Analysis
+
+To assess the fairness of my final model, I analyzed whether it performs equally well for outages caused by severe weather compared to intentional attacks. Since these two causes represent different types of disruptions—one driven by natural events and the other by human actions—disparities in model performance could indicate bias in how the model predicts different outage scenarios.
+
+Groups Defined:
+Group X: Outages caused by severe weather
+Group Y: Outages caused by intentional attacks
+Evaluation Metric:
+I chose precision as my evaluation metric because it measures how often the model’s severe outage predictions are correct. If precision is lower for one group, it means the model is more likely to incorrectly classify outages in that group as severe, leading to misallocation of emergency response resources.
+
+**Null Hypothesis**: The model’s precision is the same for severe weather outages and intentional attacks. Any observed difference is due to random chance.
+**Alternative Hypothesis**: The model’s precision is lower for intentional attacks than for severe weather, meaning it struggles to correctly classify these outages.
+
+### Results
+- Observed Precision Difference (Severe Weather - Intentional Attacks): 0.06
+- P-Value: 0.0
+
+Since the p-value is 0.0, I reject the null hypothesis. This indicates that the observed difference in precision between the two groups is statistically significant and unlikely to be due to random variation. In particular, the model exhibits lower precision for intentional attacks, meaning it is more prone to misclassifying intentional attacks as severe outages compared to severe weather-related outages.
+
+<iframe
+  src="assets/fairness1.html"
+  width="800"
+  height="500"
+  frameborder="0"
+></iframe>
