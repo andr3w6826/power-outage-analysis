@@ -77,7 +77,7 @@ Exploratory Data Analysis provides insights into the dataset's structure, distri
 - **Number of Outages Over Time**:
 
     Key Observations:
-    - The number of outages generally increased from 2000 - 2011 and spiked in 2011, reaching over 250 recorded outages
+    - The number of outages generally increased from 2000 - 2011 and spiked in 2011, reaching over 250 recorded outages.
     - After 2011, there was a sharp decline, suggesting possible improvements to infrastructure, policy changes, etc.
 
 <iframe
@@ -89,7 +89,7 @@ Exploratory Data Analysis provides insights into the dataset's structure, distri
 
 - **Causes of 2011's Outages**
 
-Key Observations:
+    Key Observations:
     - The large majority of causes were intentional attacks, hinting perhaps at increased civil unrest, crime, etc. 
     - Given these findings, utility companies might need to allocate more resources to combat physical/cyber attacks.
 
@@ -103,8 +103,8 @@ Key Observations:
 - **Causes of 2000-2016 Outages**
 
     Key Observations:
-    - More than half of all outages were caused by severe weather, suggesting that storm mitigation and climate durability should be a top priority for utility companies 
-    - While intentional attacks are less frequent than weather events, it is still the second largest category and should be taken seriously
+    - More than half of all outages were caused by severe weather, suggesting that storm mitigation and climate durability should be a top priority for utility companies .
+    - While intentional attacks are less frequent than weather events, it is still the second largest category and should be taken seriously.
     - Notably, equipment failure is surprisingly low, suggesting that the grid itself is usually well maintained.
 
 <iframe
@@ -134,8 +134,8 @@ Key Observations:
 - **Outage Duration vs. Cause Category**
 
     Key Observations:
-    - Severe weather appears to be associated with some of the longest outages, with many instances lasting over 14,000 minutes (~10 days)
-    - Intentional attakcs and equipment failures generally lead to shorter outages, indicating a quick resolution time with the exception of an outlier
+    - Severe weather appears to be associated with some of the longest outages, with many instances lasting over 14,000 minutes (~10 days).
+    - Intentional attacks and equipment failures generally lead to shorter outages, indicating a quick resolution time with the exception of an outlier.
 
 <iframe
   src="assets/bivariate-1.html"
@@ -144,14 +144,14 @@ Key Observations:
   frameborder="0"
 ></iframe>
 <br>
-- **Demand Loss vs Outage Duration**
+- **Demand Loss vs. Outage Duration**
 
     *Note: Bubble size denotes number of customers affected*
 
     Key Observations:
-    - The majority of outages are concentrated at shorter durations and lower demand losses, indicating that most power disruptions are short and affect a limited power supply
-    - There is a cluster of high demand loss in the first 5,000 minutes, likely representing outages in urban areas with high energy consumption
-    - 2008's Hurricane Ike stands out as an extreme event, representing the bubble lasting around 30,000 minutes (~21 days) and causing significant loss
+    - The majority of outages are concentrated at shorter durations and lower demand losses, indicating that most power disruptions are short and affect a limited power supply.
+    - There is a cluster of high demand loss in the first 5,000 minutes, likely representing outages in urban areas with high energy consumption.
+    - 2008's Hurricane Ike stands out as an extreme event, with an outage lasting around 30,000 minutes (~21 days) and causing severe demand loss.
 
 <iframe
   src="assets/bivariate-2.html"
@@ -170,8 +170,8 @@ Key Observations:
     *Note: Only first 5 rows are shown*
 
     Key Observations:
-    - Sorted by counts, California and Texas have the highest incidents while Michigan, Washington, and New York have few outages. However, CA and TX have lower average durations compared to MI, WA, NY.
-    - This suggests that states like CA and TX might focus on reducing outage frequency, while the other states might prioritize improving recovery speed.
+    - Sorted by counts, California and Texas have the most recorded outages, while Michigan, Washington, and New York have few outages. However, CA and TX have shorter average outage durations compared to Michigan, Washington, and New York.
+    - This suggests that states like California and Texas might focus on reducing outage frequency, while the other states might prioritize improving recovery speed.
 
 <br>
 
@@ -192,7 +192,7 @@ Key Observations:
     Key Observations:
     - Sorted by outage duration, the northeast has the longest average outage durations (~77 hours), suggesting that harsh winters and older infrastructure might lead to longer disruptions
     - The northeast's demand loss is also on the higher side, possibly due to high population density and reliance on electricity
-    - The South experiences the highest number of customers affected per outage but has a shorter outage duration implying that utilities in the South might have faster response times despite more large scale disruptions. 
+    - The South experiences the highest number of customers affected per outage but has shorter outage durations, implying that utilities in the region may have faster response times despite more large-scale disruptions.
 
 <br>
 
