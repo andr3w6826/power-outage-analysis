@@ -320,5 +320,21 @@ My model evaluation metric will be the F1-score as my dataset is imbalanced in s
 At the time of an outage severity prediction, we would have access to the features: `YEAR`, `MONTH`, `U.S._STATE`, `NERC.REGION`, `CLIMATE.REGION`, `CLIMATE.CATEGORY`,  `CAUSE.CATEGORY`, `CUSTOMERS.AFFECTED`, `SEASON`, `START_HOUR`,  `ANOMALY.LEVEL`.
 
 # Baseline Model
+
+To establish a baseline model, I trained a Random Forest Classifier using only three features: Month (numerical), U.S. State (categorical), and Customers Affected (numerical). This serves as a simple benchmark to compare against more complex models later.
+
+The features were then passed through a pipline where I one-hot-encoded `U.S._STATE` and passed the numerical features through. To make up for a portion of missing values, I imputed missing values for `CUSTOMERS.AFFECTED` with it's median to avoid biasing the dataset toward any extreme values.
+
+### Baseline Model Performance
+
+| Metric        | Class 0 (Non-Severe) | Class 1 (Severe) | Overall |
+|--------------|---------------------|------------------|---------|
+| **Precision**  | 0.38                | 0.91             | -       |
+| **Recall**     | 0.44                | 0.89             | -       |
+| **F1-Score**   | 0.41                | 0.90             | -       |
+| **Accuracy**   | -                   | -                | 0.82    |
+
+
+
 # Final Model
 # Fairness Analysis
