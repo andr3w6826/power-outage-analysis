@@ -114,6 +114,12 @@ Key Observations:
   frameborder="0"
 ></iframe>
 
+**Geospatial Distribution of Power Outages**
+
+Key Observations:
+    - California and Texas experienced the highest number of recorded outages which could be due to population density, extremely dry weather, etc. 
+    - The East Coast and parts of the Midwest show moderate outage frequencies which may be attributed to seasonal storms, hurricanes, etc. 
+    
 <iframe
   src="assets/us_outage_distribution.html"
   width="800"
