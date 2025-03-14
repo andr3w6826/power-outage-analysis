@@ -47,9 +47,34 @@ Cleaning the dataset was essential to ensure the accuracy and reliability of the
 
 #### Data Cleaning
 
-1. The dataset contained 57 columns, but many were not needed for the analysis. I only kept the features I was interested in which include: `YEAR`, `MONTH`, `U.S._STATE`, `NERC.REGION`, `CLIMATE.REGION`, `ANOMALY.LEVEL`, `OUTAGE.START.DATE`, `OUTAGE.START.TIME`, `OUTAGE.RESTORATION.DATE`, `OUTAGE.RESTORATION.TIME`, `CAUSE.CATEGORY`, `OUTAGE.DURATION`, `DEMAND.LOSS.MW`, `CUSTOMERS.AFFECTED`, `TOTAL.PRICE`, `TOTAL.SALES`, `TOTAL.CUSTOMERS`, `POPPCT_URBAN`, `POPDEN_URBAN`, `AREAPCT_URBAN`.
+**Selecting Relevant Columns**: The dataset contained 57 columns, but many were not needed for the analysis. Only variables relevant to the study were retained such as outage duration, causes, climation conditions, economic indicators, and population density metrics. These columns were corrected to appropriate data types.
 
-2. 
+**Handling Missing and Zero Values**: Certain columns, such as demand loss, customers affected, and outage duration, contained values recorded as zero.
+Given the nature of power outages, it was unlikely that these values were genuinely zero; instead, they likely represented missing or unreported data.
+These zero values were replaced with missing values to better reflect the underlying data collection process.
+
+**Dropping Rows with Missing Key Information**: Entries where `OUTAGE.START/END.DATE`, `OUTAGE.START.TIME`, `OUTAGE.RESTORATION.DATE`, and `OUTAGE.RESTORATION.TIME` were missing were removed because an outage with missing time stamps and thus duration cannot be analyzed meaningfully.
+
+**Combining Timestamps**: Since the dataset originally stored date and time as separate columns for both start and restoration times, I merged the two columns to create new timestamp colummns `OUTAGE.START` and `OUTAGE.RESTORATION`. This transformation provides a way to double check `OUTAGE.DURATION`
+
+The first few rows of the cleaned DataFrame are shown below
+
+|   YEAR |   MONTH | U.S._STATE   | NERC.REGION   | CLIMATE.REGION     |   ANOMALY.LEVEL | CLIMATE.CATEGORY   | CAUSE.CATEGORY     |   OUTAGE.DURATION |   DEMAND.LOSS.MW |   CUSTOMERS.AFFECTED |   TOTAL.PRICE |   TOTAL.SALES |   PC.REALGSP.STATE |   POPDEN_URBAN |   AREAPCT_URBAN | OUTAGE.START        | OUTAGE.RESTORATION   |
+|-------:|--------:|:-------------|:--------------|:-------------------|----------------:|:-------------------|:-------------------|------------------:|-----------------:|---------------------:|--------------:|--------------:|-------------------:|---------------:|----------------:|:--------------------|:---------------------|
+|   2011 |       7 | Minnesota    | MRO           | East North Central |            -0.3 | normal             | severe weather     |              3060 |              nan |                70000 |          9.28 |   6.56252e+06 |              51268 |           2279 |            2.14 | 2011-07-01 17:00:00 | 2011-07-03 20:00:00  |
+|   2014 |       5 | Minnesota    | MRO           | East North Central |            -0.1 | normal             | intentional attack |                 1 |              nan |                  nan |          9.28 |   5.28423e+06 |              53499 |           2279 |            2.14 | 2014-05-11 18:38:00 | 2014-05-11 18:39:00  |
+|   2010 |      10 | Minnesota    | MRO           | East North Central |            -1.5 | cold               | severe weather     |              3000 |              nan |                70000 |          8.15 |   5.22212e+06 |              50447 |           2279 |            2.14 | 2010-10-26 20:00:00 | 2010-10-28 22:00:00  |
+|   2012 |       6 | Minnesota    | MRO           | East North Central |            -0.1 | normal             | severe weather     |              2550 |              nan |                68200 |          9.19 |   5.78706e+06 |              51598 |           2279 |            2.14 | 2012-06-19 04:30:00 | 2012-06-20 23:00:00  |
+|   2015 |       7 | Minnesota    | MRO           | East North Central |             1.2 | warm               | severe weather     |              1740 |              250 |               250000 |         10.43 |   5.97034e+06 |              54431 |           2279 |            2.14 | 2015-07-18 02:00:00 | 2015-07-19 07:00:00  |
+
+#### Exploratory Data Analysis
+
+<iframe
+  src="assets/univariate-1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 # Assessment of Missingness
 # Hypothesis Testing
