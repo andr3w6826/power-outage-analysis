@@ -1,4 +1,5 @@
-### A Data Science Project By Andrew Chen
+### Power Outage Analysis
+A Data Science Project
 
 # Introduction
 
