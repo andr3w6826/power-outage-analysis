@@ -143,6 +143,7 @@ Key Observations:
 ></iframe>
 
 - **Demand Loss vs Outage Duration**
+
     *Note: Bubble size denotes number of customers affected*
 
     Key Observations:
@@ -159,7 +160,10 @@ Key Observations:
 
 ### Grouping and Aggregates
 
+    *Note: Only first 5 rows shown* 
+
 - **Outages by U.S. State**
+
     Key Observations:
     - Sorted by counts, California and Texas have the highest incidents while Michigan, Washington, and New York have few outages. However, CA and TX have lower average durations compared to MI, WA, NY.
     - This suggests that states like CA and TX might focus on reducing outage frequency, while the other states might prioritize improving recovery speed.
@@ -172,9 +176,15 @@ Key Observations:
 | Washington   |                             73 |                       1838.7  |
 | New York     |                             66 |                       6400.71 |
 
+
 - **Outages by Climate Region**
+
+    *Note: Only first 5 rows shown* 
+
     Key Observations:
-    - 
+    - Sorted by outage duration, the northeast has the longest average outage durations (~77 hours), suggesting that harsh winters and older infrastructure might lead to longer disruptions
+    - The northeast's demand loss is also on the higher side, possibly due to high population density and reliance on electricity
+    - The South experiences the highest number of customers affected per outage but has a shorter outage duration implying that utilities in the South might have faster response times despite more large scale disruptions. 
 
 | CLIMATE.REGION     |   Average CUSTOMERS.AFFECTED |  Average DEMAND.LOSS.MW |  Average OUTAGE.DURATION |
 |:-------------------|---------------------:|-----------------:|------------------:|
