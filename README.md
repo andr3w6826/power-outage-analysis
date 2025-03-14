@@ -197,6 +197,36 @@ Key Observations:
 
 # Assessment of Missingness
 
+| DataFrame columns        |   Missing Value Counts (sorted) |
+|:-------------------|---------:|
+| DEMAND.LOSS.MW     |      857 |
+| CUSTOMERS.AFFECTED |      621 |
+| OUTAGE.DURATION    |       78 |
+| TOTAL.SALES        |       12 |
+| TOTAL.PRICE        |       12 |
+
+### NMAR Analysis:
+
+#### **Is `CUSTOMERS.AFFECTED` NMAR?**
+
+I believe that `CUSTOMERS.AFFECTED` is Not Missing At Random (NMAR) because the likelihood its missingness is related to the value itself rather than being randomly distributed or dependent on other observed variables. Various reasonings for missingness may be:
+
+- Severe outages: Large scale disasters may overwhelm reporting systems
+- Intentional non-disclosure: Utility companies might not report the impact of an outage for perhaps legal liabilities or bad press
+
+To confirm whether the missingness is actually NMAR or instead Missing at Random (MAR), I could collect additional data such as:
+
+- Cause of outage: The reason for missingness might be correlated with specific cause categories, suggesting MAR instead of NMAR
+- Outage duration: If longer outages tend to have missing values for customers affected, the missingness could be associated with severeity rather than the customer count itself
+
+
+### Missingness Dependency: 
+
+#### **Is DEMAND.LOSS.MW NMAR?** 
+
+The column is missing 857 times out of approximately 1457 observations, meaning that nearly 58% of the data in this column is missing. To determine if the missingness is Not Missing At Random (NMAR), I will test this column against the columns `CUSTOMERS.AFFECTED` and `TOTAL.SALES`
+
+
 
 
 # Hypothesis Testing
