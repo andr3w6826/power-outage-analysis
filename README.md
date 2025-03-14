@@ -90,7 +90,6 @@ Exploratory Data Analysis provides insignts into the dataset's structure, distri
 - **Causes of 2011's Outages**
 
 Key Observations:
-
     - The large majority of causes were intentional attacks, hinting perhaps at increased civil unrest, crime, etc. 
     - Given these findings, utility companies might need to allocate more resources to combat physical/cyber attacks.
 
