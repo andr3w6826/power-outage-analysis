@@ -409,7 +409,7 @@ Groups Defined:
 - Group X: Outages caused by severe weather
 
 - Group Y: Outages caused by intentional attacks
-s
+
 - Evaluation Metric: I chose precision as my evaluation metric because it measures how often the model’s severe outage predictions are correct. If precision is lower for one group, it means the model is more likely to incorrectly classify outages in that group as severe, leading to misallocation of emergency response resources.
 
 **Null Hypothesis**: The model’s precision is the same for severe weather outages and intentional attacks. Any observed difference is due to random chance.
