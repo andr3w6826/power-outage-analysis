@@ -47,15 +47,15 @@ Cleaning the dataset was essential to ensure the accuracy and reliability of the
 
 ## Data Cleaning
 
-**Selecting Relevant Columns**: The dataset contained 57 columns, but many were not needed for the analysis. Only variables relevant to the study were retained such as outage duration, causes, climation conditions, economic indicators, and population density metrics. These columns were corrected to appropriate data types.
+**Selecting Relevant Columns**: The dataset contained 57 columns, but many were not needed for the analysis. Only variables relevant to the study were retained such as outage duration, causes, climatic conditions, economic indicators, and population density metrics. These columns were corrected to appropriate data types.
 
 **Handling Missing and Zero Values**: Certain columns, such as demand loss, customers affected, and outage duration, contained values recorded as zero.
 Given the nature of power outages, it was unlikely that these values were genuinely zero; instead, they likely represented missing or unreported data.
 These zero values were replaced with missing values to better reflect the underlying data collection process.
 
-**Dropping Rows with Missing Key Information**: Entries where `OUTAGE.START/END.DATE`, `OUTAGE.START.TIME`, `OUTAGE.RESTORATION.DATE`, and `OUTAGE.RESTORATION.TIME` were missing were removed because an outage with missing time stamps and thus duration cannot be analyzed meaningfully.
+**Dropping Rows with Missing Key Information**: Entries where `OUTAGE.START/END.DATE`, `OUTAGE.START.TIME`, `OUTAGE.RESTORATION.DATE`, or `OUTAGE.RESTORATION.TIME` were missing were removed because an outage with missing time stamps and thus duration cannot be analyzed meaningfully.
 
-**Combining Timestamps**: Since the dataset originally stored date and time as separate columns for both start and restoration times, I merged the two columns to create new timestamp colummns `OUTAGE.START` and `OUTAGE.RESTORATION`. This transformation provides a way to double check `OUTAGE.DURATION`
+**Combining Timestamps**: Since the dataset originally stored date and time as separate columns for both start and restoration times, I merged the two columns to create new timestamp columns `OUTAGE.START` and `OUTAGE.RESTORATION`. This transformation allows for cross-verifying `OUTAGE.DURATION` calculations.
 
 The first few rows of the cleaned DataFrame are shown below, with a selection of columns chosen
 
@@ -70,15 +70,15 @@ The first few rows of the cleaned DataFrame are shown below, with a selection of
 
 ## Exploratory Data Analysis
 
-Exploratory Data Analysis provides insignts into the dataset's structure, distributions, and relationships between variables. 
+Exploratory Data Analysis provides insights into the dataset's structure, distributions, and relationships between variables. 
 
 ### Univariate Analysis
 
 - **Number of Outages Over Time**:
 
     Key Observations:
-    - The number of outages generaly increased from 2000 - 2011 and spiked in 2011, reaching over 250 recorded outages
-    - After 2011, there was a sharp decline, sugessting possible improvements to infastructure, policy changes, etc.
+    - The number of outages generally increased from 2000 - 2011 and spiked in 2011, reaching over 250 recorded outages
+    - After 2011, there was a sharp decline, suggesting possible improvements to infrastructure, policy changes, etc.
 
 <iframe
   src="assets/univariate-1.html"
@@ -103,7 +103,7 @@ Key Observations:
 - **Causes of 2000-2016 Outages**
 
     Key Observations:
-    - More than half of all outages were caused by severe weather, suggesting, that storm mitigation and climate durability should be a top priority for utility companies 
+    - More than half of all outages were caused by severe weather, suggesting that storm mitigation and climate durability should be a top priority for utility companies 
     - While intentional attacks are less frequent than weather events, it is still the second largest category and should be taken seriously
     - Notably, equipment failure is surprisingly low, suggesting that the grid itself is usually well maintained.
 
@@ -118,7 +118,7 @@ Key Observations:
 - **Geospatial Distribution of Power Outages**
 
     Key Observations:
-    - California and Texas experienced the highest number of recorded outages which could be due to population density, extremely dry weather, etc. 
+    - California and Texas experienced the highest number of recorded outages which could be due to population density, extreme weather conditions, etc. 
     - The East Coast and parts of the Midwest show moderate outage frequencies which may be attributed to seasonal storms, hurricanes, etc. 
 
 <iframe
