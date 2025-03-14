@@ -186,6 +186,7 @@ Key Observations:
     - The northeast's demand loss is also on the higher side, possibly due to high population density and reliance on electricity
     - The South experiences the highest number of customers affected per outage but has a shorter outage duration implying that utilities in the South might have faster response times despite more large scale disruptions. 
 
+
 | CLIMATE.REGION     |   Average CUSTOMERS.AFFECTED |  Average DEMAND.LOSS.MW |  Average OUTAGE.DURATION |
 |:-------------------|---------------------:|-----------------:|------------------:|
 | East North Central |               149816 |          633.902 |           4626.5  |
@@ -193,6 +194,7 @@ Key Observations:
 | Central            |               145721 |          586.896 |           2882.21 |
 | South              |               212031 |          475.686 |           2872.45 |
 | Southeast          |               201340 |          865.318 |           2247.66 |
+
 
 
 # Assessment of Missingness
@@ -237,7 +239,7 @@ Alternate Hypothesis:  The distribution of customers affected is not the same wh
 <iframe
   src="assets/missing1.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
@@ -275,7 +277,7 @@ The observed difference in means was 807.36 , and the computed p-value was 0.008
 ></iframe>
 
 #### **So, is `DEMAND.LOSS.MW` NMAR?** 
-Since we reject the null hypothesis, it indicates that demand loss is more likely to be missing when outages have a significantly different duration (either shorter or longer). This suggests that the missingness of DEMAND.LOSS.MW is not completely random and is instead dependent on outage duration.
+Since we reject the null hypothesis, it indicates that demand loss is more likely to be missing when outages have a significantly different duration (either shorter or longer). This suggests that the missingness of DEMAND.LOSS.MW is not completely random (NMAR) and is instead dependent on outage duration (MAR)
 
 # Hypothesis Testing
 # Framing a Prediction Problem
